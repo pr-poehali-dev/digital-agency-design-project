@@ -5,24 +5,42 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 
-const categories = ['Все', 'Концептуальный дизайн', 'Полиграфия', 'Брендинг', '3D визуализация'];
+const categories = ['Все', 'Концептуальный дизайн', '3D визуализация', 'Полиграфия', 'Дизайн сайтов'];
 
 const portfolioItems = [
   {
     id: 1,
-    title: 'Премиальный брендинг',
-    category: 'Брендинг',
-    image: 'https://cdn.poehali.dev/projects/6dde7b8f-4543-45e7-810a-01f52ac3eb12/files/73776d37-5c85-4a85-abef-fc8386890f43.jpg',
+    title: 'Дизайн корпоративного сайта',
+    category: 'Дизайн сайтов',
+    image: 'https://cdn.poehali.dev/projects/6dde7b8f-4543-45e7-810a-01f52ac3eb12/files/93ef00b2-17b7-419e-a04a-e285b75065f0.jpg',
   },
   {
     id: 2,
-    title: 'Архитектурная визуализация',
+    title: 'Полиграфическая продукция',
+    category: 'Полиграфия',
+    image: 'https://cdn.poehali.dev/projects/6dde7b8f-4543-45e7-810a-01f52ac3eb12/files/d27a3ac1-6acd-41d1-87a6-d3c172316590.jpg',
+  },
+  {
+    id: 3,
+    title: 'Концептуальное решение бренда',
+    category: 'Концептуальный дизайн',
+    image: 'https://cdn.poehali.dev/projects/6dde7b8f-4543-45e7-810a-01f52ac3eb12/files/f6c4caee-6caf-440f-8d53-3d19f6e36e0c.jpg',
+  },
+  {
+    id: 4,
+    title: 'Архитектурная 3D визуализация',
     category: '3D визуализация',
     image: 'https://cdn.poehali.dev/projects/6dde7b8f-4543-45e7-810a-01f52ac3eb12/files/819ae42f-e8f8-4728-b23f-1ab281474fcb.jpg',
   },
   {
-    id: 3,
-    title: 'Концептуальное решение',
+    id: 5,
+    title: 'Премиальный брендбук',
+    category: 'Полиграфия',
+    image: 'https://cdn.poehali.dev/projects/6dde7b8f-4543-45e7-810a-01f52ac3eb12/files/73776d37-5c85-4a85-abef-fc8386890f43.jpg',
+  },
+  {
+    id: 6,
+    title: 'Бренд-идентичность',
     category: 'Концептуальный дизайн',
     image: 'https://cdn.poehali.dev/projects/6dde7b8f-4543-45e7-810a-01f52ac3eb12/files/b613081e-9579-4fef-b34b-b3f2970cebab.jpg',
   },
@@ -30,32 +48,48 @@ const portfolioItems = [
 
 const services = [
   {
-    icon: 'Lightbulb',
+    icon: 'Palette',
     title: 'Концептуальный дизайн',
-    description: 'Создаём уникальные концепции, отражающие суть вашего бренда',
-  },
-  {
-    icon: 'FileText',
-    title: 'Полиграфия',
-    description: 'Разработка печатной продукции высочайшего качества',
-  },
-  {
-    icon: 'Sparkles',
-    title: 'Брендинг',
-    description: 'Формирование целостного визуального стиля компании',
+    description: 'Разработка уникальной визуальной концепции и айдентики бренда',
   },
   {
     icon: 'Box',
     title: '3D визуализация',
-    description: 'Фотореалистичная визуализация пространств и продуктов',
+    description: 'Фотореалистичная визуализация интерьеров, экстерьеров и продуктов',
+  },
+  {
+    icon: 'FileText',
+    title: 'Полиграфия',
+    description: 'Дизайн брошюр, каталогов, упаковки и другой печатной продукции',
+  },
+  {
+    icon: 'Monitor',
+    title: 'Дизайн сайтов',
+    description: 'Создание современных веб-интерфейсов и UX/UI решений',
   },
 ];
 
-const team = [
-  { name: 'Анна Соколова', role: 'Арт-директор', image: '👩‍🎨' },
-  { name: 'Дмитрий Волков', role: '3D художник', image: '👨‍💻' },
-  { name: 'Елена Петрова', role: 'Графический дизайнер', image: '👩‍🎨' },
-  { name: 'Михаил Иванов', role: 'Бренд-стратег', image: '👨‍💼' },
+const workProcess = [
+  {
+    step: '01',
+    title: 'Бриф и анализ',
+    description: 'Изучаем задачи, целевую аудиторию и конкурентов',
+  },
+  {
+    step: '02',
+    title: 'Концепция',
+    description: 'Разрабатываем визуальные решения и презентуем идеи',
+  },
+  {
+    step: '03',
+    title: 'Реализация',
+    description: 'Создаём финальные макеты и готовим файлы к продакшену',
+  },
+  {
+    step: '04',
+    title: 'Поддержка',
+    description: 'Помогаем с внедрением и адаптацией материалов',
+  },
 ];
 
 function Index() {
@@ -78,7 +112,7 @@ function Index() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-gold">LUXE DESIGN</h1>
           <div className="hidden md:flex gap-8">
-            {['Главная', 'О студии', 'Услуги', 'Портфолио', 'Команда', 'Контакты'].map((item) => (
+            {['Главная', 'Услуги', 'Портфолио', 'Процесс', 'Контакты'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -99,8 +133,7 @@ function Index() {
             <span className="text-foreground">которое продаёт</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
-            Дизайн-агентство премиум-класса, специализирующееся на концептуальном дизайне, полиграфии, брендинге и 3D
-            визуализации
+            Digital-агентство, специализирующееся на концептуальном дизайне, 3D визуализации, полиграфии и дизайне сайтов
           </p>
           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6">
             Начать проект
@@ -108,41 +141,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="о студии" className="py-20 px-6 bg-card">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-up">
-              <h3 className="text-5xl font-bold mb-6 text-gold">О студии</h3>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Мы создаём визуальные решения, которые выделяют бренды на рынке и запоминаются на годы. Наша команда
-                объединяет креативное мышление с глубоким пониманием бизнес-задач.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Более 10 лет опыта в работе с премиальными брендами. Каждый проект — это уникальная история, рассказанная
-                через дизайн.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="p-8 text-center bg-background border-border hover:border-primary transition-colors">
-                <div className="text-4xl font-bold text-gold mb-2">150+</div>
-                <div className="text-muted-foreground">Проектов</div>
-              </Card>
-              <Card className="p-8 text-center bg-background border-border hover:border-primary transition-colors">
-                <div className="text-4xl font-bold text-gold mb-2">50+</div>
-                <div className="text-muted-foreground">Клиентов</div>
-              </Card>
-              <Card className="p-8 text-center bg-background border-border hover:border-primary transition-colors">
-                <div className="text-4xl font-bold text-gold mb-2">10+</div>
-                <div className="text-muted-foreground">Лет опыта</div>
-              </Card>
-              <Card className="p-8 text-center bg-background border-border hover:border-primary transition-colors">
-                <div className="text-4xl font-bold text-gold mb-2">25</div>
-                <div className="text-muted-foreground">Наград</div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <section id="услуги" className="py-20 px-6">
         <div className="container mx-auto">
@@ -207,18 +206,18 @@ function Index() {
         </div>
       </section>
 
-      <section id="команда" className="py-20 px-6">
+      <section id="процесс" className="py-20 px-6">
         <div className="container mx-auto">
-          <h3 className="text-5xl font-bold text-center mb-16 text-gold">Наша команда</h3>
+          <h3 className="text-5xl font-bold text-center mb-16 text-gold">Процесс работы</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
+            {workProcess.map((item, index) => (
               <Card
                 key={index}
-                className="p-8 text-center bg-card border-border hover:border-primary transition-colors group"
+                className="p-8 bg-card border-border hover:border-primary transition-colors group relative"
               >
-                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">{member.image}</div>
-                <h4 className="text-xl font-bold mb-2 text-foreground">{member.name}</h4>
-                <p className="text-muted-foreground">{member.role}</p>
+                <div className="text-6xl font-bold text-primary/20 mb-4 group-hover:text-primary/40 transition-colors">{item.step}</div>
+                <h4 className="text-2xl font-bold mb-4 text-foreground">{item.title}</h4>
+                <p className="text-muted-foreground">{item.description}</p>
               </Card>
             ))}
           </div>
